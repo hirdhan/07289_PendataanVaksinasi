@@ -40,13 +40,13 @@ public class PendudukModel07289 extends ModelAbstract07289 {
         }
     }
 
-    public ArrayList<PendudukEntity0728907289> getPenduduk(int id){
+    public ArrayList<PendudukEntity0728907289> getPenduduk(String nik){
         ArrayList<PendudukEntity0728907289> arrPenduduk = new ArrayList<>();
 
         try{
-            sql = "SELECT * FROM penduduk where id = ?";
+            sql = "SELECT * FROM penduduk where nik = ?";
             PreparedStatement stat = conn.prepareStatement(sql);
-            stat.setInt(1, id);
+            stat.setString(1,nik);
             ResultSet rs = stat.executeQuery();
             while(rs.next()){
                 PendudukEntity0728907289 pendudukEntity0728907289 = new PendudukEntity0728907289();
