@@ -15,15 +15,14 @@ public class AdminModel0728907289 extends ModelAbstract07289 {
 
     public void insertData(AdminEntity0728907289 adminEntity07289) {
         try {
-            sql = "INSERT INTO admin(id, nip, nama, alamat, password, noTelp)" +
-                    "VALUE(?,?,?,?,?,?)";
+            sql = "INSERT INTO admin(nip, nama, alamat, password, noTelp)" +
+                    "VALUE(?,?,?,?,?)";
             PreparedStatement stat = conn.prepareStatement(sql);
-            stat.setInt(1, adminEntity07289.getId());
-            stat.setString(2, adminEntity07289.getNip());
-            stat.setString(3, adminEntity07289.getNama());
-            stat.setString(4, adminEntity07289.getAlamat());
-            stat.setString(5, adminEntity07289.getPassword());
-            stat.setString(6, adminEntity07289.getNoTelp());
+            stat.setString(1, adminEntity07289.getNip());
+            stat.setString(2, adminEntity07289.getNama());
+            stat.setString(3, adminEntity07289.getAlamat());
+            stat.setString(4, adminEntity07289.getPassword());
+            stat.setString(5, adminEntity07289.getNoTelp());
             stat.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,7 +66,6 @@ public class AdminModel0728907289 extends ModelAbstract07289 {
             if (rs.next()) {
                 cek = rs.getInt("id");
                 String nama = rs.getString("nama");
-                System.out.println("SELAMAT DATANG" + nama);
             } else {
                 cek = 0;
             }
