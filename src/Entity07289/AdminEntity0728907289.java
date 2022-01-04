@@ -5,8 +5,8 @@ public class AdminEntity0728907289 extends UserEntityAbstract07289 {
 
     public AdminEntity0728907289(){
     }
-    public AdminEntity0728907289(int id, String nip, String nama, String alamat, String password, String noTelp) {
-        super(nama, alamat, noTelp, id);
+    public AdminEntity0728907289(String nip, String nama, String alamat, String password, String noTelp){
+        super(nama, alamat, noTelp);
         this.nip = nip;
         this.password = password;
     }
